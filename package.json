@@ -1,0 +1,16 @@
+{
+  "name": "angular-nickramsay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-wide": "echo \"Installing server dependencies\n\" && cd server && npm install && echo \"Installing client dependencies\n\" && cd ../client && npm install",
+    "build-client": "echo \"Building Client\n\" && cd client && ng build --prod",
+    "start-prod": "NODE_ENV=production node server/index.js",
+    "start-prod-first-time": "npm run install-wide && npm run build-client && npm run start-prod",
+    "start-dev": "NODE_ENV=development nodemon server/index.js",
+    "start-dev-first-time": "npm run install-wide && npm run build-client && npm run start-dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
